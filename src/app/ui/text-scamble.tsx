@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react'
+"use client";
+import React, { useEffect, useRef } from 'react';
 
 type TextScrambleOptions = {
   chars?: string
@@ -87,11 +88,13 @@ type TextScrambleProps = {
   scrambleDuration?: number
   className?: string
   style?: React.CSSProperties
+  waitDuration?: number
 }
 
 export const TextScrambleComponent: React.FC<TextScrambleProps> = ({
   phrases,
   scrambleDuration = 50,
+  waitDuration = 3000,
   className = '',
   style = {}
 }) => {
@@ -108,7 +111,7 @@ export const TextScrambleComponent: React.FC<TextScrambleProps> = ({
     const next = () => {
       if (!mounted || !scrambleRef.current) return
       scrambleRef.current.setText(phrases[counterRef.current]).then(() => {
-        timeoutRef.current = window.setTimeout(next, 800)
+        timeoutRef.current = window.setTimeout(next, waitDuration)
       })
       counterRef.current = (counterRef.current + 1) % phrases.length
     }
@@ -125,7 +128,7 @@ export const TextScrambleComponent: React.FC<TextScrambleProps> = ({
   return (
     <div
       ref={elRef}
-      className={`text${className ? ' ' + className : ''}`}
+      className={`text-wrap text${className ? ' ' + className : ''}`}
       style={style}
     />
   )
