@@ -1,7 +1,7 @@
 import SectionTag from "@/app/ui/section.tag";
 
 export default function AboutSection(){
-    return <section className="flex flex-col md:grid md:grid-cols-2 px-mobile md:px-base py-6">
+    return <section className="flex flex-col md:grid md:grid-cols-2 px-mobile md:px-base py-24 pt-6">
 
         <div className="flex flex-col gap-2 items-start">
             <SectionTag>About Me</SectionTag>
