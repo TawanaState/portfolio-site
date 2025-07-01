@@ -4,7 +4,7 @@
   --foreground: #ccc;
   --primary:#503CC3;
   --secondary:var(--foreground);
-  --muted:hsla(0, 0%, 50%, 0.1);
+  --muted:hsla(0, 0%, 50%, 0.25);
   --accent:var(--primary);
   --font-secondary:"Major Mono Display", monospace;
   --font-primary:"Nova Square", sans-serif;
