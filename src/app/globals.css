@@ -82,7 +82,7 @@ h2{
   @apply w-full h-full;
 }
 .skill-card img{
-  @apply size-32 scale-130;
+  @apply size-32;/*scale-130*/
 }
 .skill-card-content{
   @apply flex flex-row items-center justify-between gap-3;
@@ -173,4 +173,57 @@ h2{
   width: 10px;
   height: 100%;
   @apply border-l border-muted scale-y-125 py-5 text-muted;
+}
+
+
+
+/** PROJECT CARD UI */
+.project-card .pile *{
+  transition-property: all;
+  transition-duration: .7s;
+  transition-timing-function: ease-in-out;
+  transition-delay: var(--delay);
+  animation-delay: var(--delay);
+}
+.project-card img{
+  @apply md:group-hover:scale-90;
+}
+.project-card .pile span{
+  background: linear-gradient(90deg, var(--bgcolor) 50%, transparent 50%);
+  background-size: 200%;
+  animation-timing-function: ease-in-out;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  @apply opacity-0 md:group-hover:opacity-100 md:group-hover:[animation-name:slide-open];
+}
+@media (width <= 48rem /* 768px */) {
+  .pile[data-inview="true"] span{
+    animation-name: slide-open;
+    opacity: 1;
+  }
+  .pile[data-inview="true"] img{
+    scale: .90;
+  }
+}
+.project-card-container{
+  @apply p-2;
+}
+
+@keyframes slide-open {
+  0%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/** CONTACT ME */
+input.big{
+  @apply outline-0 border-b border-b-foreground placeholder:transition text-[2rem] md:text-[3.2rem] placeholder:text-foreground focus-within:placeholder:opacity-80 mb-6;
+}
+button.big{
+  @apply text-[2rem] md:text-[3.2rem];
 }
