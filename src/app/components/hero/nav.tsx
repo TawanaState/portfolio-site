@@ -1,3 +1,5 @@
+
+import MenuItemEvents from "./menu-item-events";
 const list = [
     ["Home", "#hero"],
     ["About", "#about"],
@@ -9,23 +11,25 @@ const list = [
 export default function Nav(params: { className?: string }) {
     return (
         <nav className={`md:flex md:flex-col grid grid-rows-[3rem_auto] h-[100dvh] md:h-auto text-[0.8rem] bg-background ${params.className}`}>
-            <div className="peer flex flex-row items-center justify-between border-b border-b-muted py-4 px-mobile md:px-base">
+            <div className="peer flex md:hidden flex-row items-center justify-between border-b border-b-muted py-4 px-mobile md:px-base">
                 <span className="lowercase">tawananyasha mukoriwo</span>
                 <span className="lowercase hidden md:inline-block">info@tawananyasha.com | +263 779 936 807</span>
-                <input type="checkbox" name="menu-toggle" id="menu-toggle" className="md:hidden appearance-none before:block mso text-3xl !font-semibold before:[content:'menu'] checked:before:[content:'close']" />
+                <input type="checkbox" name="menu-toggle" id="menu-toggle" className="md:hidden appearance-none before:block mso text-3xl font-extralight before:[content:'menu'] checked:before:[content:'close']" />
             </div>
-            <div className="hidden md:grid grid-cols-3 items-center justify-between py-4 px-mobile md:px-base">
+
+
+            <div className="hidden md:grid grid-cols-3 items-center justify-between py-4 md:py-4.5 px-mobile md:px-base border-b border-b-muted">
                 <span className="lowercase hidden md:inline-block">tawananyasha mukoriwo</span>
                 <ul className="flex flex-row items-center justify-between gap-4 place-self-center">
-                    <li className="menu-item active"><a href="">HOME</a></li>
-                    <li className="menu-item"><a href="">ABOUT</a></li>
-                    <li className="menu-item"><a href="">SKILLS</a></li>
-                    <li className="menu-item"><a href="">PROJECTS</a></li>
-                    <li className="menu-item"><a href="">EXPERIENCE</a></li>
-                    <li className="menu-item"><a href="">CONTACT</a></li>
+                    <li className="menu-item active"><a href="#hero">HOME</a></li>
+                    <li className="menu-item"><a href="#about">ABOUT</a></li>
+                    <li className="menu-item"><a href="#skills">SKILLS</a></li>
+                    <li className="menu-item"><a href="#projects">PROJECTS</a></li>
+                    <li className="menu-item"><a href="#contact">CONTACT</a></li>
                 </ul>
                 <span className="place-self-end">
                     {">/<"}
+                    <MenuItemEvents />
                 </span>
             </div>
 
@@ -33,8 +37,8 @@ export default function Nav(params: { className?: string }) {
                 <ul className="flex flex-col gap-4 mt-16 place-self-start w-full">
                     {
                         list.map((item, index) => (
-                            <li key={index} className="menu-item flex flex-row items-center justify-between text-[2.5rem] font-semibold text-left w-full border-b last:border-0 border-foreground pb-4">
-                                <a href={item[1]} className="uppercase">
+                            <li key={index} className="menu-item flex flex-row items-center justify-between text-[2.5rem] font-normal text-left w-full border-b last:border-0 border-foreground pb-4">
+                                <a href={item[1]} className="uppercase mobile">
                                     {item[0]}
                                 </a>
                                 <span className="mso !font-semibold">north_east</span>
