@@ -17,7 +17,7 @@ export default function Nav(params: { className?: string }) {
                 <input type="checkbox" name="menu-toggle" id="menu-toggle" className="md:hidden appearance-none before:block mso text-3xl font-extralight before:[content:'menu'] checked:before:[content:'close']" />
             </div>
 
-
+            {/* Desktop Nav */}
             <div className="hidden md:grid grid-cols-3 items-center justify-between py-4 md:py-4.5 px-mobile md:px-base border-b border-b-muted">
                 <span className="lowercase hidden md:inline-block">tawananyasha mukoriwo</span>
                 <ul className="flex flex-row items-center justify-between gap-4 place-self-center">
@@ -33,7 +33,9 @@ export default function Nav(params: { className?: string }) {
                 </span>
             </div>
 
-            <div className="peer-[:has(:checked)]:flex hidden flex-col justify-between h-full px-mobile md:!hidden bg-background z-10">
+
+            {/* Mobile Nav */}
+            <div className="mobile-nav peer-[:has(:checked)]:flex hidden flex-col justify-between h-full px-mobile md:!hidden bg-background z-10">
                 <ul className="flex flex-col gap-4 mt-16 place-self-start w-full">
                     {
                         list.map((item, index) => (
