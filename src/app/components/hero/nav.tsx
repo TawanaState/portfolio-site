@@ -33,7 +33,6 @@ export default function Nav(params: { className?: string }) {
                 </span>
             </div>
 
-
             {/* Mobile Nav */}
             <div className="mobile-nav peer-[:has(:checked)]:flex hidden flex-col justify-between h-full px-mobile md:!hidden bg-background z-10">
                 <ul className="flex flex-col gap-4 mt-16 place-self-start w-full">
