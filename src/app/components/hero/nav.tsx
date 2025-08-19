@@ -12,14 +12,20 @@ export default function Nav(params: { className?: string }) {
     return (
         <nav className={`md:flex md:flex-col grid grid-rows-[3rem_auto] h-[100dvh] md:h-auto text-[0.8rem] bg-background ${params.className}`}>
             <div className="peer flex md:hidden flex-row items-center justify-between border-b border-b-muted py-4 px-mobile md:px-base">
-                <span className="lowercase">tawananyasha mukoriwo</span>
+                <span>
+                    <span className="bg-primary p-0.5 px-1 mr-2 rounded-sm">Beta</span>
+                    Tawananyasha
+                </span>
                 <span className="lowercase hidden md:inline-block">info@tawananyasha.com | +263 779 936 807</span>
                 <input type="checkbox" name="menu-toggle" id="menu-toggle" className="md:hidden appearance-none before:block mso text-3xl font-extralight before:[content:'menu'] checked:before:[content:'close']" />
             </div>
 
             {/* Desktop Nav */}
             <div className="hidden md:grid grid-cols-3 items-center justify-between py-4 md:py-4.5 px-mobile md:px-base border-b border-b-muted">
-                <span className="lowercase hidden md:inline-block">tawananyasha mukoriwo</span>
+                <span className="hidden md:inline-block">
+                    <span className="bg-primary p-0.5 px-1 mr-2 rounded-sm">Beta</span>
+                    Tawananyasha
+                </span>
                 <ul className="flex flex-row items-center justify-between gap-4 place-self-center">
                     <li className="menu-item active"><a href="#hero">HOME</a></li>
                     <li className="menu-item"><a href="#about">ABOUT</a></li>
